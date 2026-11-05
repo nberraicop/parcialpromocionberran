@@ -1,0 +1,16 @@
+# Build
+target/
+
+# Base de datos local
+data/
+
+# Variables de entorno
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
