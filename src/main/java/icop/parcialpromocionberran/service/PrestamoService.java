@@ -39,10 +39,11 @@ public class PrestamoService {
 
     @Transactional(readOnly = true)
     public List<ResponsePrestamoDto> listarPorSocio(Long socioId) {
+    // primero chequeo que el socio exista
         Socio socio = obtenerSocio(socioId);
         return socio.getPrestamos().stream().map(this::aDto).toList();
     }
-
+    
     private Socio obtenerSocio(Long id) {
         return socioRepository.findById(id)
                 .orElseThrow(() -> new RecursoNoEncontradoException("Socio no encontrado con id: " + id));

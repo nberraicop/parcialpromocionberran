@@ -30,6 +30,7 @@ public class SocioService {
         if (socioRepository.existsByDni(dto.getDni())) {
             throw new ReglaNegocioException("Ya existe un socio con el DNI: " + dto.getDni());
         }
+        // si el dni ya existe, no dejamos crear el socio
 
         Socio socio = new Socio();
         socio.setNombre(dto.getNombre());
